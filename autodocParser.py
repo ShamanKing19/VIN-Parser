@@ -1,9 +1,11 @@
 import asyncio
+import itertools
 import json
 from pprint import pprint
 import random
+import time
 import aiohttp
-import pandas
+import pandas as pd
 from tqdm import tqdm
 # pip install xlsxwriter
 # pip install openpyxl
@@ -36,9 +38,6 @@ class AutodocParser:
 
 
     async def startParsing(self):
-        # Строки с результатами
-        outputData = []
-
         requestsList = []
         # * Запросы по VIN
         for vin in self.data:
@@ -64,25 +63,29 @@ class AutodocParser:
 
 
     async def parseVINs(self, carInfo):
-        outputData = []
+        if not carInfo: return
+        detailsData = []
+        uniqueParts = []
 
-        unknownNumber = 0 #! Для некоторых машин нужно это число
-        unknownNumber = 12909 #! Для каких-то это
+        carID = carInfo.get("CarID", "0")
+        carModel = carInfo.get("Model", "")
 
-        categoriesUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/{unknownNumber}/categories?ssd={carInfo['Ssd']}"
-        pprint(carInfo)
-        with open("carInfo.json", "a", encoding="utf-8") as file:
-            file.write(json.dumps(carInfo))
-        print(categoriesUrl)
+        categoriesUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/{carID}/categories?ssd={carInfo['Ssd']}".strip()
         response = await self.session.get(categoriesUrl)
         carSparePartsCategories = await response.json()
 
         categories = carSparePartsCategories.get("items", []) if "items" in carSparePartsCategories.keys() else carSparePartsCategories
+        
+        # Получение всех подкатегорий
+        subcategories = [self.getChildrenList(category.get("children", [])) for category in categories]
+        subcats = list(itertools.chain(*subcategories))
+        allCategories = categories + subcats
 
-        for partCategory in tqdm(categories):
+        for partCategory in tqdm(allCategories):
             sparePartInfoUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/0/categories/{partCategory['categoryId']}/units?ssd={partCategory['ssd']}"
             sparePartInfoResponse = await self.session.get(sparePartInfoUrl)
             sparePartInfoResponseJson = await sparePartInfoResponse.json()
+
             for sparePartsInfo in sparePartInfoResponseJson.get("items", []):
                 sparePartDetailInfoUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/0/units/{sparePartsInfo['unitId']}/spareparts?ssd={sparePartsInfo['ssd']}"
                 data = {
@@ -91,14 +94,40 @@ class AutodocParser:
                 sparePartDetailInfoResponse = await self.session.post(sparePartDetailInfoUrl, data=data)
                 sparePartDetailInfoResponseJson = await sparePartDetailInfoResponse.json()
                 spareParts = sparePartDetailInfoResponseJson.get("items", [])
+                
+
                 for sparePart in spareParts:
-                    outputData.append({
-                        "car": carInfo['Catalog'],
-                        "category": partCategory["name"],
-                        "partName": sparePart["name"],
-                        "partNumber": sparePart["partNumber"]
-                    })
+                    # Фильтр дубликатов #! Возможно из-за этого будут проблемы, могут попросить оставить дубли деталей
+                    if sparePart["partNumber"] not in uniqueParts:
+                        uniqueParts.append(sparePart["partNumber"])
+                        
+                        detailsData.append({
+                            "category": partCategory["name"],
+                            "partName": sparePart["name"],
+                            "partNumber": sparePart["partNumber"]
+                        })
+                    else:
+                        continue
+
+        outputData = {
+            "name": carInfo['Catalog'],
+            "carModel": carModel,
+            "items": detailsData
+        }
         return outputData
+
+
+    def getChildrenList(self, node):
+        items = []
+        for item in node:
+            if isinstance(item, str): return items
+            children = item.get("children", {})
+            if children:
+                items = self.getChildrenList(item)
+            else:
+                items.append(item)
+        return items
+
 
 
     # Обычные запросы по VIN
@@ -126,24 +155,25 @@ class AutodocParser:
         return response
 
     
-    def writeToExcel(self, carInfo):
-        writer = pandas.ExcelWriter(self.ouputFilename, engine='openpyxl')
-        # print(carInfo)
-        for row in carInfo:
-            df = pandas.DataFrame(row)
-            try:
-                sheetName = row[0]["car"]
-            except:
-                sheetName = "empty"
-            # print(sheetName)
+    def writeToExcel(self, carsData):
+        writer = pd.ExcelWriter(self.ouputFilename, engine='openpyxl')
+        #! car = [{...}, {...}, ...]
+        for car in carsData:
+            if not car: continue
+            items = car["items"]
+            sheetName = f"{car['name']} {car['carModel']}"
+            df = pd.DataFrame(items)
             df.to_excel(writer, sheet_name=sheetName, encoding="utf-8", index=False)
             writer.save()
         writer.close()
 
 
 if __name__ == "__main__":
-    vins = pandas.read_excel("input.xlsx", header=None)
+    start = time.time()
+    vins = pd.read_excel("input.xlsx", header=None)
     data = [vin[0] for vin in vins.values.tolist()]
 
     autodocParser = AutodocParser(data)
     autodocParser.run()
+    
+    print(time.time() - start)
