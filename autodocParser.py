@@ -28,8 +28,7 @@ class AutodocParser:
             "password": "6sqqSZ77PHZPmEL",
             "grant_type": "password"
         }
-        self.inputFilename = "input.xlsx"
-        self.ouputFilename = "output.xlsx"
+        self.ouputFilename = "vin_output.xlsx"
 
 
     def run(self):
@@ -170,7 +169,7 @@ class AutodocParser:
 
 if __name__ == "__main__":
     start = time.time()
-    vins = pd.read_excel("input.xlsx", header=None)
+    vins = pd.read_excel("vin_input.xlsx", header=None)
     data = [vin[0] for vin in vins.values.tolist()]
 
     autodocParser = AutodocParser(data)
