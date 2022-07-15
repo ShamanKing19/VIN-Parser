@@ -12,9 +12,9 @@ from tqdm import tqdm
 class AutodocParser:
     def __init__(self, data):
         self.ouputFilename = "catalog_output.xlsx"
-        self.timeout = 5
+        self.timeout = 0
         self.sessionTimeout = aiohttp.ClientTimeout(total=None, sock_connect=self.timeout, sock_read=self.timeout)
-        self.connector = aiohttp.TCPConnector(ssl=False, limit=10000)
+        self.connector = aiohttp.TCPConnector(ssl=False, limit=100)
         self.data = data
         self.userAgent = UserAgent().random
         self.headers = {}
@@ -23,30 +23,6 @@ class AutodocParser:
         self.loginAttempts = ["DC1/O1127x9ZL4GU2bhQgg==", "W7F+x+sPZUPsCAcXwYSH5Q=="]        
         
         self.accounts = self.readAccountsFile()
-        self.accountsOld = [
-            {
-                "login": "KNG-16191",
-                "password": "gera1905"
-            },
-            {
-                "login": "KNG-16078",
-                "password": "6sqqSZ77PHZPmEL"
-            },
-            {
-                "login": "KLD-32227",
-                "password": "kjqwhekljqhw"
-            },
-            {
-                "login": "KNG-16206",
-                "password": "asdasdasd"
-            },
-            {
-                "login": "KLD-32228",
-                "password": "qweqweqwe"
-            },
-        ]
-
-        self.account = self.accounts[0]
 
 
     async def startParsing(self):
@@ -63,79 +39,61 @@ class AutodocParser:
             return
         # profileData = await self.getProfileData()
 
-        outputItems = []
         # Проход по номерам деталей
-        for detailData in tqdm(self.data):
-            detailName = detailData["detailName"]
-            detailNumber = detailData["detailNumber"]
-            manufacturers = await self.getManufacturerInfo(detailNumber.replace("-", ""), session)
-            
-            # Проход по номерам производителей для каждой детали
-            for manufacturer in manufacturers:
-                manufacturerID = manufacturer["id"]
-                manufacturerName = manufacturer["manufacturerName"]
-                partName = manufacturer["partName"]
-                partNumber = manufacturer["artNumber"]
-
-                #* Вся инфа о детали
-                detailInfo = await self.getDetailInfo(session, manufacturerID, partNumber)
-                originalDetails = detailInfo["originals"]
-                analogDetails = detailInfo["analogs"]
-
-                
-
-                #* Оригиналы
-                for item in originalDetails["inventoryItems"]:
-                    outputDetailData = {
-                        "type": "original",
-                        "detailName": detailName,
-                        "detailNumber": detailNumber,
-                        "deliveryDays": item["deliveryDays"],
-                        "minimumDeliveryDays": item["minimalDeliveryDays"],
-                        "manufacturerName": manufacturerName,
-                        "price": item["price"],
-                        "supplier": item["supplier"]["name"] # Поставщик
-                    }
-                    outputItems.append(outputDetailData)
-
-                # #* Аналоги из запроса на оригинал
-                # for item in originalDetails["analogs"]:
-                #     outputDetailData = {
-                #         "type": "analogFromOriginal",
-                #         "detailName": item["name"],
-                #         "detailNumber": item["partNumber"],
-                #         "deliveryDays": item["inventoryItems"][0]["deliveryDays"],
-                #         "minimumDeliveryDays": item["inventoryItems"][0]["minimalDeliveryDays"],
-                #         "manufacturerName": item["manufacturer"]["name"],
-                #         "price": item["inventoryItems"][0]["price"],
-                #         "supplier": item["inventoryItems"][0]["supplier"]["name"] # Поставщик
-                #     }
-                #     outputItems.append(outputDetailData)
-
-                #* Аналоги
-                for item in analogDetails["analogs"]:
-                    outputDetailData = {
-                        "type": "analog",
-                        "detailName": item["name"],
-                        "detailNumber": item["partNumber"], # можно использовать displayPartNumber
-                        # "deliveryDays": item["deliveryDays"],
-                        "minimumDeliveryDays": item["minimalDeliveryDays"],
-                        "manufacturerName": item["manufacturer"]["name"],
-                        "price": item["minimalPrice"],
-                        # "supplier": item["inventoryItems"][0]["supplier"]["name"] # Поставщик
-                    }
-                    outputItems.append(outputDetailData)
-
-
-                # log(f"examples/originals/original_{detailNumber}_{manufacturerID}.json", originalDetails)
-                # log(f"examples/analogs/analog_{detailNumber}_{manufacturerID}.json", analogDetails)
-            # hash = await self.getHash()
-
+        outputItems = []
+        requests = []
+        for detailData in self.data:
+            requests.append(self.parseDetail(detailData, session, outputItems))
+        responses = [await detail for detail in tqdm(asyncio.as_completed(requests), total=len(requests))]
         await session.close()
 
         self.writeToExcel(outputItems)
 
 
+    async def parseDetail(self, detailData, session, outputItems):
+        detailName = detailData["detailName"]
+        detailNumber = detailData["detailNumber"]
+        manufacturers = await self.getManufacturerInfo(detailNumber.replace("-", ""), session)
+        
+        # Проход по номерам производителей для каждой детали
+        for manufacturer in manufacturers:
+            manufacturerID = manufacturer["id"]
+            manufacturerName = manufacturer["manufacturerName"]
+            partName = manufacturer["partName"]
+            partNumber = manufacturer["artNumber"]
+
+            #* Вся инфа о детали
+            detailInfo = await self.getDetailInfo(session, manufacturerID, partNumber)
+            originalDetails = detailInfo["originals"]
+            analogDetails = detailInfo["analogs"]
+
+            #* Оригиналы
+            for item in originalDetails["inventoryItems"]:
+                outputDetailData = {
+                    "type": "original",
+                    "detailName": detailName,
+                    "detailNumber": detailNumber,
+                    "deliveryDays": item["deliveryDays"],
+                    "minimumDeliveryDays": item["minimalDeliveryDays"],
+                    "manufacturerName": manufacturerName,
+                    "price": item["price"],
+                    "supplier": item["supplier"]["name"] # Поставщик
+                }
+                outputItems.append(outputDetailData)
+
+            #* Аналоги
+            for item in analogDetails["analogs"]:
+                outputDetailData = {
+                    "type": "analog",
+                    "detailName": item["name"],
+                    "detailNumber": item["partNumber"], # можно использовать displayPartNumber
+                    # "deliveryDays": item["deliveryDays"],
+                    "minimumDeliveryDays": item["minimalDeliveryDays"],
+                    "manufacturerName": item["manufacturer"]["name"],
+                    "price": item["minimalPrice"],
+                    # "supplier": item["inventoryItems"][0]["supplier"]["name"] # Поставщик
+                }
+                outputItems.append(outputDetailData)
 
 
     async def getDetailInfo(self, session, manufacturerID, detailNumber):
@@ -230,6 +188,7 @@ class AutodocParser:
 
         #! Если забанят аккаунт, берём другой рандомный
         while responseJson.get("error", False):
+            print("Аккаунт забанен, пробую ещё...")
             responseJson = await self.makeTokenRequest()
         
         accessToken = responseJson["access_token"]
