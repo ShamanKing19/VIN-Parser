@@ -1,0 +1,561 @@
+{
+    "manufacturer": {
+        "id": 0,
+        "popularityIndex": 0
+    },
+    "minimalPrice": 0.0,
+    "minimalDeliveryDays": 0,
+    "inventoryItems": [],
+    "analogs": [
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "0601815SX",
+            "displayPartNumber": "06-01815-SX",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5479,
+                "name": "STELLOX",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 769.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5479/0601815SX/1616170"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                1616170
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1823A",
+            "displayPartNumber": "6PK1823A",
+            "name": "Ремень",
+            "manufacturer": {
+                "id": 7129,
+                "name": "ZOMMER",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 855.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/7129/6PK1823A/6498004",
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/7129/6PK1823A/6498005"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                6498004,
+                6498005
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1820",
+            "displayPartNumber": "6PK1820",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5976,
+                "name": "AVANTECH",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 962.0,
+            "minimalDeliveryDays": 7,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5976/6PK1820/5038664"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                5038664
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "R090011",
+            "displayPartNumber": "R090011",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5271,
+                "name": "NAKAMOTO",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 999.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5271/R090011/6945367"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                6945367
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "M6310276",
+            "displayPartNumber": "M6310276",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5814,
+                "name": "MARSHALL",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1179.0,
+            "minimalDeliveryDays": 4,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5814/M6310276/9360180",
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5814/M6310276/9360181"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                9360180,
+                9360181
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1820",
+            "displayPartNumber": "6PK1820",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 42,
+                "name": "DAYCO",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1322.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/42/6PK1820/8586171"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                8586171
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 4,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 3.25,
+                "cntMark": 4
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1820",
+            "displayPartNumber": "6PK1820",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 6548,
+                "name": "PATRON",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1344.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [],
+            "fotoType": "None",
+            "fotoIds": [],
+            "isPhotoAvaiable": false,
+            "commentCount": 0,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "20285",
+            "displayPartNumber": "20285",
+            "name": "Ремень",
+            "manufacturer": {
+                "id": 7081,
+                "name": "ROSTECO",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1403.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/7081/20285/7855092",
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/7081/20285/7855093",
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/7081/20285/7855094"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                7855092,
+                7855093,
+                7855094
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 4,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 5.0,
+                "cntMark": 4
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1823",
+            "displayPartNumber": "6PK1823",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5521,
+                "name": "LYNX",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1414.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5521/6PK1823/3478024"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                3478024
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 2,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 5.0,
+                "cntMark": 2
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1822EXTRA",
+            "displayPartNumber": "6PK1822 EXTRA",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 31,
+                "name": "CONTITECH",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1421.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/31/6PK1822EXTRA/9214289"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                9214289
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 13,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 5.0,
+                "cntMark": 13
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "D11BR0284",
+            "displayPartNumber": "D11BR0284",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 7062,
+                "name": "CWORKS",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1480.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/7062/D11BR0284/9435815"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                9435815
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1820",
+            "displayPartNumber": "6PK-1820",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5307,
+                "name": "MASUMA",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1503.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5307/6PK1820/9277830"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                9277830
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "1606354180",
+            "displayPartNumber": "16 063 541 80",
+            "name": "Ремень",
+            "manufacturer": {
+                "id": 514,
+                "name": "CITROEN/PEUGEOT",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1763.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [],
+            "fotoType": "None",
+            "fotoIds": [],
+            "isPhotoAvaiable": false,
+            "commentCount": 0,
+            "isCompatibility": 1,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1822K",
+            "displayPartNumber": "6PK1822K",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 42,
+                "name": "DAYCO",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1972.0,
+            "minimalDeliveryDays": 4,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [],
+            "fotoType": "None",
+            "fotoIds": [],
+            "isPhotoAvaiable": false,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1823XS",
+            "displayPartNumber": "6PK1823XS",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 33,
+                "name": "GATES",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 2111.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/33/6PK1823XS/3549480"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                3549480
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 7,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 4.285714,
+                "cntMark": 7
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "865310716",
+            "displayPartNumber": "8653-10716",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 33,
+                "name": "GATES",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 4989.0,
+            "minimalDeliveryDays": 4,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/33/865310716/6307384"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                6307384
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 7,
+            "crossType": 4,
+            "partNumber": "VKMA36201",
+            "displayPartNumber": "VKMA 36201",
+            "name": "Комплект ремня",
+            "manufacturer": {
+                "id": 50,
+                "name": "SKF",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 17218.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/50/VKMA36201/6147837"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                6147837
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        }
+    ],
+    "fotoUrls": [],
+    "fotoType": "None",
+    "fotoIds": [],
+    "isPhotoAvaiable": false,
+    "commentCount": 0,
+    "isCompatibility": 0,
+    "mark": {
+        "avgMark": 0.0,
+        "cntMark": 0
+    }
+}

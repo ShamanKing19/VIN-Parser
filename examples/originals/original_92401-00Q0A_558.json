@@ -1,0 +1,23 @@
+{
+    "partNumber": "9240100Q0A",
+    "manufacturer": {
+        "id": 558,
+        "popularityIndex": 0
+    },
+    "minimalPrice": 0.0,
+    "minimalDeliveryDays": 0,
+    "inventoryItems": [],
+    "analogs": [],
+    "fotoUrls": [],
+    "fotoType": "None",
+    "fotoIds": [],
+    "isPhotoAvaiable": false,
+    "commentCount": 0,
+    "isCompatibility": 0,
+    "mark": {
+        "avgMark": 0.0,
+        "cntMark": 0
+    },
+    "isPrivateExists": false,
+    "sparePartShops": []
+}

@@ -1,4 +1,5 @@
 import asyncio
+import json
 from pprint import pprint
 import random
 import time
@@ -6,6 +7,7 @@ import pandas as pd
 
 import aiohttp
 from fake_useragent import UserAgent
+from requests import session
 
 class AutodocParser:
     def __init__(self, data):
@@ -17,57 +19,85 @@ class AutodocParser:
         self.userAgent = UserAgent().random
 
         self.loginUrl = "https://webapi.autodoc.ru/api/account/login"
-        self.login = "KNG-16078"
-        self.password = "6sqqSZ77PHZPmEL"
+        # self.login = "KNG-16078"
+        # self.password = "6sqqSZ77PHZPmEL"
+        self.login = "KNG-16191"
+        self.password = "gera1905"
+
         self.loginAttempts = ["DC1/O1127x9ZL4GU2bhQgg==", "W7F+x+sPZUPsCAcXwYSH5Q=="]
+
+        self.headers = {}
         
 
 
     async def startParsing(self):
         challengeGuid = await self.getChallengeGuid()
         tokenData = await self.getToken()
-        loginData = await self.getLoginData(tokenData, challengeGuid, random.choice(self.loginAttempts))
-        pprint(loginData)
-        if loginData["clientStatus"] != 0:
+        self.headers = {
+            "authorization": tokenData["token_type"] + " " + tokenData["access_token"],
+            "user-agent": self.userAgent
+        }
+        loginData = await self.getLoginData(challengeGuid, random.choice(self.loginAttempts))
+        session = loginData["session"]
+        if loginData["response"]["clientStatus"] != 0:
             await self.startParsing()
             return
         # profileData = await self.getProfileData()
 
+        # Проход по номерам деталей
+        for detailData in self.data:
+            detailName = detailData["detailName"]
+            detailNumber = detailData["detailNumber"]
+            parts = await self.getPartInfo(detailNumber.replace("-", ""), session)
+            
+            # Проход по номерам производителей для каждой детали
+            for part in parts:
+                manufacturerID = part["id"]
+                manufacturerName = part["manufacturerName"]
+                partName = part["partName"]
+                partNumber = part["artNumber"]
 
-        # print(f"challengeGuid: {challengeGuid}\n")
-        # pprint(profileData)
-        # hash = await self.getHash()
-        # self.session = await self.createSession(authData, hash)
+                #* Вся инфа о детали
+                detailInfo = await self.getDetailInfo(session, manufacturerID, partNumber)
+                originalDetails = detailInfo["originals"]
+                analogDetails = detailInfo["analogs"]
+                log(f"examples/originals/original_{detailNumber}_{manufacturerID}.json", originalDetails)
+                log(f"examples/analogs/analog_{detailNumber}_{manufacturerID}.json", analogDetails)
+            # hash = await self.getHash()
 
-        # hash = await self.getHash()
-        # newSession = await self.createSession(authData, hash)
-        # for detailData in self.data:
-        #     detailName = detailData["detailName"]
-        #     detailNumber = detailData["detailNumber"]
-        #     carID = await self.getCarID(newSession, detailNumber)
-        #     print(carID)
-
-        # await self.session.close()
-
-
-
-
-
-    # TODO: Понять как правильно авторизовываться чтобы получать данные о стоимости и сроках доставки детали
-    async def makeApiRequest(self, detailNumber):
-        detailUrl = "https://webapi.autodoc.ru/api/spareparts/657/N0138321/2?framesId=undefined&attempt=undefined&isrecross=false"
-        response = await self.session.get(detailUrl)
-        return await response.text()
-        # responseJson = await response.json()
+        await session.close()
 
 
 
-    async def getCarID(self, session, partNumber):
+
+    async def getDetailInfo(self, session, manufacturerID, detailNumber):
+        originalsUrl = f"https://webapi.autodoc.ru/api/spareparts/{manufacturerID}/{detailNumber}/2?framesId=undefined&attempt=undefined&isrecross=false"
+        analogsUrl = f"https://webapi.autodoc.ru/api/spareparts/analogs/{manufacturerID}/{detailNumber}/2"
+        session.headers["hash_"] = await self.getHash(manufacturerID, detailNumber)       
+        session.headers["dnt"] = "1"       
+        session.headers["source_"] = "Site2"       
+        
+        # original
+        originalsResponse = await session.get(originalsUrl)
+        originalsResponseJson = await originalsResponse.json()
+
+        # analogs
+        analogsResponse = await session.get(analogsUrl)
+        analogsResponseJson = await analogsResponse.json()
+
+        returnData = {
+            "originals": originalsResponseJson,
+            "analogs": analogsResponseJson
+        }
+
+        return returnData
+
+
+    async def getPartInfo(self, partNumber, session):
         url = f"https://webapi.autodoc.ru/api/manufacturers/{partNumber}?showAll=false"
         response = await session.get(url)
         responseJson = await response.json()
-        # carID = responseJson["id"]
-        # return carID
+        return responseJson
 
     
     async def getProfileData(self):
@@ -77,13 +107,8 @@ class AutodocParser:
         return responseJson
 
 
-    async def getLoginData(self, authData, challengeGuid, attempt):
+    async def getLoginData(self, challengeGuid, attempt):
         url = "https://webapi.autodoc.ru/api/account/login"
-        
-        headers = {
-            "authorization": authData["token_type"] + " " + authData["access_token"],
-            "user-agent": self.userAgent
-        }
         
         data = {
             "attempt": attempt,
@@ -93,16 +118,21 @@ class AutodocParser:
             "password": self.password,
             "rememberMe": "true"
         }
+
+        session = aiohttp.ClientSession(connector=self.connector, headers=self.headers)
+        response = await session.post(url, data=data)
+        responseJson = await response.json()
+        returnData = {
+            "response": responseJson,
+            "session": session
+        }
         
-        async with aiohttp.request("POST", url, headers=headers, data=data) as response:
-            responseJson = await response.json()
-            clientStatus = responseJson["clientStatus"]
-        return responseJson
+        return returnData
 
 
     async def createSession(self, authData, hash) -> aiohttp.ClientSession:
         headers = {
-            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
+            "user-agent": self.userAgent,
             "authorization": authData["token_type"] + " " + authData["access_token"],
             "hash": hash
         }
@@ -119,13 +149,14 @@ class AutodocParser:
         return challengeGuid
 
 
-    async def getHash(self, carID, partNumber):
-        hashUrl = f"https://webapi.autodoc.ru/api/spareparts/hash/{carID}/{partNumber}"
+    async def getHash(self, manufacturerID, partNumber):
+        hashUrl = f"https://webapi.autodoc.ru/api/spareparts/hash/{manufacturerID}/{partNumber}"
         async with aiohttp.request("POST", hashUrl) as response:
             responseJson = await response.json()
         return responseJson
 
 
+    #! За большое число запросов банят аккаунт нахуй
     async def getToken(self):
         url = "https://auth.autodoc.ru/token"
 
@@ -160,6 +191,11 @@ class AutodocParser:
         loop = asyncio.get_event_loop()
         loop.run_until_complete(self.startParsing())
         
+
+def log(filename, text):
+    file = open(filename, "w", encoding="utf-8")
+    file.write(json.dumps(text, ensure_ascii=False, indent=4))
+    file.close()
 
 
 if __name__ == "__main__":

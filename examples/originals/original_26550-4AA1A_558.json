@@ -1,0 +1,58 @@
+{
+    "partNumber": "265504AA1A",
+    "displayPartNumber": "26550-4AA1A",
+    "name": "Фонарь правый",
+    "manufacturer": {
+        "id": 558,
+        "name": "NISSAN",
+        "popularityIndex": 0
+    },
+    "minimalPrice": 56965.0,
+    "minimalDeliveryDays": 0,
+    "inventoryItems": [
+        {
+            "id": 2584464743,
+            "price": 56965.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "CTB",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T14:00:00",
+                "nextOrderDateString": "14:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 7:00, 14:00<br>Вт (2 раза): 7:00, 14:00<br>Ср (2 раза): 7:00, 14:00<br>Чт (2 раза): 7:00, 14:00<br>Пт (2 раза): 7:00, 14:00<br>Сб (2 раза): 7:00, 9:00<br>",
+                "scheduleDays": [
+                    "Пн (2 раза): 7:00, 14:00",
+                    "Вт (2 раза): 7:00, 14:00",
+                    "Ср (2 раза): 7:00, 14:00",
+                    "Чт (2 раза): 7:00, 14:00",
+                    "Пт (2 раза): 7:00, 14:00",
+                    "Сб (2 раза): 7:00, 9:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 90,
+            "directionToManufacturerId": 189256,
+            "minimalQuantity": 1,
+            "idPartner": 1650,
+            "priceType": 2
+        }
+    ],
+    "analogs": [],
+    "fotoUrls": [],
+    "fotoType": "None",
+    "fotoIds": [],
+    "isPhotoAvaiable": false,
+    "commentCount": 0,
+    "isCompatibility": 1,
+    "mark": {
+        "avgMark": 0.0,
+        "cntMark": 0
+    },
+    "isPrivateExists": false,
+    "sparePartShops": []
+}

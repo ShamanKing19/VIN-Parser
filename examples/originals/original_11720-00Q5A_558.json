@@ -1,0 +1,684 @@
+{
+    "partNumber": "1172000Q5A",
+    "displayPartNumber": "11720-00Q5A",
+    "name": "Ремень поликлиновой",
+    "manufacturer": {
+        "id": 558,
+        "name": "NISSAN",
+        "popularityIndex": 0
+    },
+    "minimalPrice": 3561.0,
+    "minimalDeliveryDays": 0,
+    "inventoryItems": [
+        {
+            "id": 2577565020,
+            "price": 3561.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "DEF",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T12:00:00",
+                "nextOrderDateString": "12:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Вт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Ср (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Чт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Пт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Сб (4 раза): 7:40, 10:00, 12:00, 13:20<br>",
+                "scheduleDays": [
+                    "Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Вт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Ср (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Чт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Пт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Сб (4 раза): 7:40, 10:00, 12:00, 13:20"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 93,
+            "directionToManufacturerId": 399482,
+            "minimalQuantity": 1,
+            "idPartner": 4994,
+            "priceType": 2
+        },
+        {
+            "id": 2485839773,
+            "price": 3630.0,
+            "quantity": 30,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "TAB",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T07:00:00",
+                "nextOrderDateString": "18 июля 07:00 мск",
+                "schedule": "Заказы отправляются поставщику По будням (1 раз): 7:00",
+                "scheduleDays": [
+                    "По будням (1 раз): 7:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 93,
+            "directionToManufacturerId": 226839,
+            "minimalQuantity": 1,
+            "idPartner": 2064,
+            "priceType": 2
+        },
+        {
+            "id": 2536935206,
+            "price": 3875.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "SHP",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T12:00:00",
+                "nextOrderDateString": "12:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Вт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Ср (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Чт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Пт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Сб (5 раз): 7:40, 10:00, 12:00, 13:00, 13:20<br>",
+                "scheduleDays": [
+                    "Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Вт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Ср (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Чт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Пт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
+                    "Сб (5 раз): 7:40, 10:00, 12:00, 13:00, 13:20"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 90,
+            "directionToManufacturerId": 76987,
+            "minimalQuantity": 1,
+            "idPartner": 936,
+            "priceType": 2
+        },
+        {
+            "id": 2551420131,
+            "price": 4148.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "RTA",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T12:00:00",
+                "nextOrderDateString": "12:00 мск",
+                "schedule": "Заказы отправляются поставщику По будням (5 раз): 8:45, 10:00, 12:00, 13:00, 15:00",
+                "scheduleDays": [
+                    "По будням (5 раз): 8:45, 10:00, 12:00, 13:00, 15:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 88,
+            "directionToManufacturerId": 22704,
+            "minimalQuantity": 1,
+            "idPartner": 339,
+            "priceType": 2
+        },
+        {
+            "id": 2546527744,
+            "price": 4447.0,
+            "quantity": 6,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "14.07.22",
+            "supplier": {
+                "name": "NIK",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T18:00:00",
+                "nextOrderDateString": "18:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 8:00, 18:00<br>Вт (2 раза): 8:00, 18:00<br>Ср (2 раза): 8:00, 18:00<br>Чт (2 раза): 8:00, 18:00<br>Пт (2 раза): 8:00, 18:00<br>Сб (1 раз): 8:00<br>Вс (1 раз): 8:00<br>",
+                "scheduleDays": [
+                    "Пн (2 раза): 8:00, 18:00",
+                    "Вт (2 раза): 8:00, 18:00",
+                    "Ср (2 раза): 8:00, 18:00",
+                    "Чт (2 раза): 8:00, 18:00",
+                    "Пт (2 раза): 8:00, 18:00",
+                    "Сб (1 раз): 8:00",
+                    "Вс (1 раз): 8:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 94,
+            "directionToManufacturerId": 27926,
+            "minimalQuantity": 1,
+            "idPartner": 584,
+            "priceType": 2
+        },
+        {
+            "id": 2588705440,
+            "price": 4667.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "VKP5",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T12:00:00",
+                "nextOrderDateString": "12:00 мск",
+                "schedule": "Заказы отправляются поставщику По будням (9 раз): 5:00, 6:00, 7:00, 8:00, 9:00, 10:00, 11:00, 12:00, 13:00",
+                "scheduleDays": [
+                    "По будням (9 раз): 5:00, 6:00, 7:00, 8:00, 9:00, 10:00, 11:00, 12:00, 13:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 100,
+            "directionToManufacturerId": 440147,
+            "minimalQuantity": 1,
+            "idPartner": 5403,
+            "priceType": 2
+        },
+        {
+            "id": 2384460242,
+            "price": 4765.0,
+            "quantity": 2,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "Дилер",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T08:00:00",
+                "nextOrderDateString": "завтра 08:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (1 раз): 8:00<br>Вт (1 раз): 8:00<br>Ср (1 раз): 8:00<br>Чт (1 раз): 8:00<br>Пт (1 раз): 8:00<br>Сб (1 раз): 8:00<br>Вс (1 раз): 8:00<br>",
+                "scheduleDays": [
+                    "Пн (1 раз): 8:00",
+                    "Вт (1 раз): 8:00",
+                    "Ср (1 раз): 8:00",
+                    "Чт (1 раз): 8:00",
+                    "Пт (1 раз): 8:00",
+                    "Сб (1 раз): 8:00",
+                    "Вс (1 раз): 8:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Склад дилера"
+            },
+            "orderCompletePercent": 75,
+            "directionToManufacturerId": 240,
+            "minimalQuantity": 1,
+            "idPartner": 15,
+            "priceType": 2
+        },
+        {
+            "id": 2598732077,
+            "price": 4939.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "RLV",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T12:00:00",
+                "nextOrderDateString": "12:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Вт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Ср (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Чт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Пт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Сб (1 раз): 9:00<br>Вс (1 раз): 9:00<br>",
+                "scheduleDays": [
+                    "Пн (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45",
+                    "Вт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45",
+                    "Ср (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45",
+                    "Чт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45",
+                    "Пт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45",
+                    "Сб (1 раз): 9:00",
+                    "Вс (1 раз): 9:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 85,
+            "directionToManufacturerId": 51909,
+            "minimalQuantity": 1,
+            "idPartner": 897,
+            "priceType": 2
+        },
+        {
+            "id": 2598734268,
+            "price": 5010.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 3,
+            "deliveryDays": 6,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "MGVR1",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T16:30:00",
+                "nextOrderDateString": "16:30 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 7:00, 16:30<br>Вт (2 раза): 7:00, 16:30<br>Ср (2 раза): 7:00, 16:30<br>Чт (2 раза): 7:00, 16:30<br>Пт (2 раза): 7:00, 16:30<br>Сб (2 раза): 7:00, 11:00<br>Вс (1 раз): 16:30<br>",
+                "scheduleDays": [
+                    "Пн (2 раза): 7:00, 16:30",
+                    "Вт (2 раза): 7:00, 16:30",
+                    "Ср (2 раза): 7:00, 16:30",
+                    "Чт (2 раза): 7:00, 16:30",
+                    "Пт (2 раза): 7:00, 16:30",
+                    "Сб (2 раза): 7:00, 11:00",
+                    "Вс (1 раз): 16:30"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 80,
+            "directionToManufacturerId": 151069,
+            "minimalQuantity": 1,
+            "idPartner": 1645,
+            "priceType": 2
+        },
+        {
+            "id": 2579427350,
+            "price": 5304.0,
+            "quantity": 10,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "VSR2",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T14:00:00",
+                "nextOrderDateString": "14:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Вт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Ср (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Чт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Пт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Сб (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Вс (2 раза): 9:00, 14:00<br>",
+                "scheduleDays": [
+                    "Пн (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00",
+                    "Вт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00",
+                    "Ср (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00",
+                    "Чт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00",
+                    "Пт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00",
+                    "Сб (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00",
+                    "Вс (2 раза): 9:00, 14:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 76,
+            "directionToManufacturerId": 416869,
+            "minimalQuantity": 1,
+            "idPartner": 5081,
+            "priceType": 2
+        },
+        {
+            "id": 2579252927,
+            "price": 5737.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "RSS",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T07:45:00",
+                "nextOrderDateString": "завтра 07:45 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (1 раз): 7:45<br>Вт (1 раз): 7:45<br>Ср (1 раз): 7:45<br>Чт (1 раз): 7:45<br>Пт (1 раз): 7:45<br>Сб (1 раз): 7:45<br>",
+                "scheduleDays": [
+                    "Пн (1 раз): 7:45",
+                    "Вт (1 раз): 7:45",
+                    "Ср (1 раз): 7:45",
+                    "Чт (1 раз): 7:45",
+                    "Пт (1 раз): 7:45",
+                    "Сб (1 раз): 7:45"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 94,
+            "directionToManufacturerId": 2183,
+            "minimalQuantity": 1,
+            "idPartner": 97,
+            "priceType": 2
+        },
+        {
+            "id": 2567534353,
+            "price": 6799.0,
+            "quantity": 3,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "14.07.22",
+            "supplier": {
+                "name": "AKG1",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T07:30:00",
+                "nextOrderDateString": "18 июля 07:30 мск",
+                "schedule": "Заказы отправляются поставщику По будням (1 раз): 7:30",
+                "scheduleDays": [
+                    "По будням (1 раз): 7:30"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 99,
+            "directionToManufacturerId": 44843,
+            "minimalQuantity": 1,
+            "idPartner": 774,
+            "priceType": 2
+        },
+        {
+            "id": 2598126251,
+            "price": 7257.0,
+            "quantity": 5,
+            "minimalDeliveryDays": 2,
+            "deliveryDays": 5,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "ZPV",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T08:50:00",
+                "nextOrderDateString": "18 июля 08:50 мск",
+                "schedule": "Заказы отправляются поставщику По будням (1 раз): 8:50",
+                "scheduleDays": [
+                    "По будням (1 раз): 8:50"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 82,
+            "directionToManufacturerId": 444117,
+            "minimalQuantity": 1,
+            "idPartner": 5413,
+            "priceType": 2
+        },
+        {
+            "id": 2600293121,
+            "price": 7500.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "LAG2",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T08:00:00",
+                "nextOrderDateString": "18 июля 08:00 мск",
+                "schedule": "Заказы отправляются поставщику По будням (1 раз): 8:00",
+                "scheduleDays": [
+                    "По будням (1 раз): 8:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 93,
+            "directionToManufacturerId": 458548,
+            "minimalQuantity": 1,
+            "idPartner": 5617,
+            "priceType": 2
+        },
+        {
+            "id": 2527637494,
+            "price": 8461.0,
+            "quantity": 5,
+            "minimalDeliveryDays": 4,
+            "deliveryDays": 7,
+            "updateDate": "14.07.22",
+            "supplier": {
+                "name": "GLVD",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T17:00:00",
+                "nextOrderDateString": "17:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 9:30, 17:00<br>Вт (2 раза): 9:30, 17:00<br>Ср (2 раза): 9:30, 17:00<br>Чт (2 раза): 9:30, 17:00<br>Пт (2 раза): 9:30, 17:00<br>Вс (1 раз): 16:00<br>",
+                "scheduleDays": [
+                    "Пн (2 раза): 9:30, 17:00",
+                    "Вт (2 раза): 9:30, 17:00",
+                    "Ср (2 раза): 9:30, 17:00",
+                    "Чт (2 раза): 9:30, 17:00",
+                    "Пт (2 раза): 9:30, 17:00",
+                    "Вс (1 раз): 16:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 100,
+            "directionToManufacturerId": 129264,
+            "minimalQuantity": 1,
+            "idPartner": 861,
+            "priceType": 2
+        },
+        {
+            "id": 2600058762,
+            "price": 8736.0,
+            "quantity": 4,
+            "minimalDeliveryDays": 4,
+            "deliveryDays": 7,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "AKAD",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T12:30:00",
+                "nextOrderDateString": "12:30 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (4 раза): 9:30, 12:30, 15:30, 17:15<br>Вт (4 раза): 9:30, 12:30, 15:30, 17:15<br>Ср (4 раза): 9:30, 12:30, 15:30, 17:15<br>Чт (4 раза): 9:30, 12:30, 15:30, 17:15<br>Пт (4 раза): 9:30, 12:30, 15:30, 17:15<br>Сб (3 раза): 9:30, 12:00, 14:30<br>",
+                "scheduleDays": [
+                    "Пн (4 раза): 9:30, 12:30, 15:30, 17:15",
+                    "Вт (4 раза): 9:30, 12:30, 15:30, 17:15",
+                    "Ср (4 раза): 9:30, 12:30, 15:30, 17:15",
+                    "Чт (4 раза): 9:30, 12:30, 15:30, 17:15",
+                    "Пт (4 раза): 9:30, 12:30, 15:30, 17:15",
+                    "Сб (3 раза): 9:30, 12:00, 14:30"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 90,
+            "directionToManufacturerId": 454392,
+            "minimalQuantity": 1,
+            "idPartner": 5540,
+            "priceType": 2
+        },
+        {
+            "id": 2380615555,
+            "price": 25148.0,
+            "quantity": 5,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "Дилер",
+                "isTodayOrderDate": true,
+                "nextOrderDate": "2022-07-15T12:00:00",
+                "nextOrderDateString": "12:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>Пн (4 раза): 7:30, 10:00, 12:00, 17:00<br>Вт (4 раза): 7:30, 10:00, 12:00, 17:00<br>Ср (4 раза): 7:30, 10:00, 12:00, 17:00<br>Чт (4 раза): 7:30, 10:00, 12:00, 17:00<br>Пт (4 раза): 7:30, 10:00, 12:00, 17:00<br>Сб (2 раза): 7:30, 10:00<br>",
+                "scheduleDays": [
+                    "Пн (4 раза): 7:30, 10:00, 12:00, 17:00",
+                    "Вт (4 раза): 7:30, 10:00, 12:00, 17:00",
+                    "Ср (4 раза): 7:30, 10:00, 12:00, 17:00",
+                    "Чт (4 раза): 7:30, 10:00, 12:00, 17:00",
+                    "Пт (4 раза): 7:30, 10:00, 12:00, 17:00",
+                    "Сб (2 раза): 7:30, 10:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Склад дилера"
+            },
+            "orderCompletePercent": 93,
+            "directionToManufacturerId": 89448,
+            "minimalQuantity": 1,
+            "idPartner": 1240,
+            "priceType": 2
+        },
+        {
+            "id": 2452701138,
+            "price": 28669.0,
+            "quantity": 5,
+            "minimalDeliveryDays": 1,
+            "deliveryDays": 4,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "OPT",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T06:30:00",
+                "nextOrderDateString": "18 июля 06:30 мск",
+                "schedule": "Заказы отправляются поставщику По будням (1 раз): 6:30",
+                "scheduleDays": [
+                    "По будням (1 раз): 6:30"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 91,
+            "directionToManufacturerId": 77988,
+            "minimalQuantity": 1,
+            "idPartner": 1155,
+            "priceType": 2
+        }
+    ],
+    "analogs": [
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": true,
+            "crossLevel": 0,
+            "crossType": 4,
+            "partNumber": "6PK1823",
+            "displayPartNumber": "6PK1823",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5521,
+                "name": "LYNX",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1414.0,
+            "minimalDeliveryDays": 0,
+            "inventoryItems": [
+                {
+                    "id": 2502084325,
+                    "price": 1414.0,
+                    "quantity": 5,
+                    "minimalDeliveryDays": 0,
+                    "deliveryDays": 3,
+                    "updateDate": "15.07.22",
+                    "supplier": {
+                        "name": "Дистрибьютор",
+                        "isTodayOrderDate": true,
+                        "nextOrderDate": "2022-07-15T11:59:00",
+                        "nextOrderDateString": "11:59 мск",
+                        "schedule": "Заказы отправляются поставщику <br>Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Сб (4 раза): 8:59, 11:59, 13:59, 15:59<br>",
+                        "scheduleDays": [
+                            "Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Сб (4 раза): 8:59, 11:59, 13:59, 15:59"
+                        ],
+                        "isAutodocMoscow": true,
+                        "isMagazine": false,
+                        "description": "Склад дистрибьютора"
+                    },
+                    "orderCompletePercent": 99,
+                    "directionToManufacturerId": 211983,
+                    "minimalQuantity": 1,
+                    "idPartner": 1970,
+                    "priceType": 2
+                }
+            ],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5521/6PK1823/3478024"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                3478024
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 2,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 5.0,
+                "cntMark": 2
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": true,
+            "crossLevel": 0,
+            "crossType": 4,
+            "partNumber": "6PK1823XS",
+            "displayPartNumber": "6PK1823XS",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 33,
+                "name": "GATES",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 3515.0,
+            "minimalDeliveryDays": 0,
+            "inventoryItems": [
+                {
+                    "id": 2582704082,
+                    "price": 3515.0,
+                    "quantity": 7,
+                    "minimalDeliveryDays": 0,
+                    "deliveryDays": 3,
+                    "updateDate": "15.07.22",
+                    "supplier": {
+                        "name": "Дистрибьютор",
+                        "isTodayOrderDate": true,
+                        "nextOrderDate": "2022-07-15T11:59:00",
+                        "nextOrderDateString": "11:59 мск",
+                        "schedule": "Заказы отправляются поставщику <br>Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Сб (4 раза): 8:59, 11:59, 13:59, 15:59<br>",
+                        "scheduleDays": [
+                            "Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Сб (4 раза): 8:59, 11:59, 13:59, 15:59"
+                        ],
+                        "isAutodocMoscow": true,
+                        "isMagazine": false,
+                        "description": "Склад дистрибьютора"
+                    },
+                    "orderCompletePercent": 99,
+                    "directionToManufacturerId": 275081,
+                    "minimalQuantity": 1,
+                    "idPartner": 1288,
+                    "priceType": 2
+                }
+            ],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/33/6PK1823XS/3549480"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                3549480
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 7,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 4.285714,
+                "cntMark": 7
+            }
+        }
+    ],
+    "fotoUrls": [],
+    "fotoType": "None",
+    "fotoIds": [],
+    "isPhotoAvaiable": false,
+    "commentCount": 0,
+    "isCompatibility": 1,
+    "mark": {
+        "avgMark": 0.0,
+        "cntMark": 0
+    },
+    "isPrivateExists": false,
+    "sparePartShops": []
+}

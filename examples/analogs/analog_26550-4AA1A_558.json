@@ -1,0 +1,141 @@
+{
+    "manufacturer": {
+        "id": 0,
+        "popularityIndex": 0
+    },
+    "minimalPrice": 0.0,
+    "minimalDeliveryDays": 0,
+    "inventoryItems": [],
+    "analogs": [
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "ST1151311R",
+            "displayPartNumber": "ST1151311R",
+            "name": "Вставка",
+            "manufacturer": {
+                "id": 6185,
+                "name": "SAT",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 2173.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/6185/ST1151311R/6225125"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                6225125
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "16330702",
+            "displayPartNumber": "16330702",
+            "name": "Фонарь правый",
+            "manufacturer": {
+                "id": 8081,
+                "name": "AVG",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 2479.0,
+            "minimalDeliveryDays": 6,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [],
+            "fotoType": "None",
+            "fotoIds": [],
+            "isPhotoAvaiable": false,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "L120010201R",
+            "displayPartNumber": "L120010201R",
+            "name": "Фонарь правый",
+            "manufacturer": {
+                "id": 6628,
+                "name": "SAILING",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 2982.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/6628/L120010201R/7944727"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                7944727
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "CMP1300203",
+            "displayPartNumber": "CMP1300203",
+            "name": "Фонарь правый",
+            "manufacturer": {
+                "id": 7310,
+                "name": "COMPONENT",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 3139.0,
+            "minimalDeliveryDays": 3,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [],
+            "fotoType": "None",
+            "fotoIds": [],
+            "isPhotoAvaiable": false,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
+            }
+        }
+    ],
+    "fotoUrls": [],
+    "fotoType": "None",
+    "fotoIds": [],
+    "isPhotoAvaiable": false,
+    "commentCount": 0,
+    "isCompatibility": 0,
+    "mark": {
+        "avgMark": 0.0,
+        "cntMark": 0
+    }
+}

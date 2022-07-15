@@ -1,0 +1,53 @@
+{
+    "partNumber": "265514AA0A",
+    "displayPartNumber": "26551-4AA0A",
+    "name": "Жгут проводов",
+    "manufacturer": {
+        "id": 558,
+        "name": "NISSAN",
+        "popularityIndex": 0
+    },
+    "minimalPrice": 2354.0,
+    "minimalDeliveryDays": 0,
+    "inventoryItems": [
+        {
+            "id": 2520872014,
+            "price": 2354.0,
+            "quantity": 2,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "14.07.22",
+            "supplier": {
+                "name": "NIHN",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T09:00:00",
+                "nextOrderDateString": "18 июля 09:00 мск",
+                "schedule": "Заказы отправляются поставщику По будням (1 раз): 9:00",
+                "scheduleDays": [
+                    "По будням (1 раз): 9:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 81,
+            "directionToManufacturerId": 70653,
+            "minimalQuantity": 1,
+            "idPartner": 1101,
+            "priceType": 2
+        }
+    ],
+    "analogs": [],
+    "fotoUrls": [],
+    "fotoType": "None",
+    "fotoIds": [],
+    "isPhotoAvaiable": false,
+    "commentCount": 0,
+    "isCompatibility": 1,
+    "mark": {
+        "avgMark": 0.0,
+        "cntMark": 0
+    },
+    "isPrivateExists": false,
+    "sparePartShops": []
+}

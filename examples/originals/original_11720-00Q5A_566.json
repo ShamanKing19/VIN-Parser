@@ -1,0 +1,152 @@
+{
+    "partNumber": "1172000Q5A",
+    "manufacturer": {
+        "id": 566,
+        "popularityIndex": 0
+    },
+    "minimalPrice": 0.0,
+    "minimalDeliveryDays": 0,
+    "inventoryItems": [],
+    "analogs": [
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": true,
+            "crossLevel": 0,
+            "crossType": 4,
+            "partNumber": "6PK1823",
+            "displayPartNumber": "6PK1823",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 5521,
+                "name": "LYNX",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 1414.0,
+            "minimalDeliveryDays": 0,
+            "inventoryItems": [
+                {
+                    "id": 2502084325,
+                    "price": 1414.0,
+                    "quantity": 5,
+                    "minimalDeliveryDays": 0,
+                    "deliveryDays": 3,
+                    "updateDate": "15.07.22",
+                    "supplier": {
+                        "name": "Дистрибьютор",
+                        "isTodayOrderDate": true,
+                        "nextOrderDate": "2022-07-15T11:59:00",
+                        "nextOrderDateString": "11:59 мск",
+                        "schedule": "Заказы отправляются поставщику <br>Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Сб (4 раза): 8:59, 11:59, 13:59, 15:59<br>",
+                        "scheduleDays": [
+                            "Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Сб (4 раза): 8:59, 11:59, 13:59, 15:59"
+                        ],
+                        "isAutodocMoscow": true,
+                        "isMagazine": false,
+                        "description": "Склад дистрибьютора"
+                    },
+                    "orderCompletePercent": 99,
+                    "directionToManufacturerId": 211983,
+                    "minimalQuantity": 1,
+                    "idPartner": 1970,
+                    "priceType": 2
+                }
+            ],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/5521/6PK1823/3478024"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                3478024
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 2,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 5.0,
+                "cntMark": 2
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": true,
+            "crossLevel": 0,
+            "crossType": 4,
+            "partNumber": "6PK1823XS",
+            "displayPartNumber": "6PK1823XS",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 33,
+                "name": "GATES",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 3515.0,
+            "minimalDeliveryDays": 0,
+            "inventoryItems": [
+                {
+                    "id": 2582704082,
+                    "price": 3515.0,
+                    "quantity": 7,
+                    "minimalDeliveryDays": 0,
+                    "deliveryDays": 3,
+                    "updateDate": "15.07.22",
+                    "supplier": {
+                        "name": "Дистрибьютор",
+                        "isTodayOrderDate": true,
+                        "nextOrderDate": "2022-07-15T11:59:00",
+                        "nextOrderDateString": "11:59 мск",
+                        "schedule": "Заказы отправляются поставщику <br>Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Сб (4 раза): 8:59, 11:59, 13:59, 15:59<br>",
+                        "scheduleDays": [
+                            "Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
+                            "Сб (4 раза): 8:59, 11:59, 13:59, 15:59"
+                        ],
+                        "isAutodocMoscow": true,
+                        "isMagazine": false,
+                        "description": "Склад дистрибьютора"
+                    },
+                    "orderCompletePercent": 99,
+                    "directionToManufacturerId": 275081,
+                    "minimalQuantity": 1,
+                    "idPartner": 1288,
+                    "priceType": 2
+                }
+            ],
+            "analogs": [],
+            "fotoUrls": [
+                "https://webapi.autodoc.ru:443/api/spareparts/foto/Standard/33/6PK1823XS/3549480"
+            ],
+            "fotoType": "Standard",
+            "fotoIds": [
+                3549480
+            ],
+            "isPhotoAvaiable": true,
+            "commentCount": 7,
+            "isCompatibility": 2,
+            "mark": {
+                "avgMark": 4.285714,
+                "cntMark": 7
+            }
+        }
+    ],
+    "fotoUrls": [],
+    "fotoType": "None",
+    "fotoIds": [],
+    "isPhotoAvaiable": false,
+    "commentCount": 0,
+    "isCompatibility": 0,
+    "mark": {
+        "avgMark": 0.0,
+        "cntMark": 0
+    },
+    "isPrivateExists": false,
+    "sparePartShops": []
+}
