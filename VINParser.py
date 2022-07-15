@@ -23,9 +23,12 @@ class AutodocParser:
         self.session = aiohttp.ClientSession(
             connector=self.connector, timeout=self.sessionTimeout)
         self.data = data
+        self.accounts = self.readAccountsFile()
+        self.account = random.choice(self.accounts)
+
         self.tokenPostData = {
-            "username": "KNG-16078",
-            "password": "6sqqSZ77PHZPmEL",
+            "username": self.account["login"],
+            "password": self.account["password"],
             "grant_type": "password"
         }
         self.ouputFilename = "vin_output.xlsx"
@@ -154,6 +157,19 @@ class AutodocParser:
         return response
 
     
+    def readAccountsFile(self):
+        rawData = pd.read_excel("accounts.xlsx", index_col=False)
+        accounts = rawData.to_numpy()
+        
+        accountsData = []
+        for account in accounts:
+            accountsData.append({
+                "login": account[0],
+                "password": account[1]
+            })
+        return accountsData
+
+
     def writeToExcel(self, carsData):
         writer = pd.ExcelWriter(self.ouputFilename, engine='openpyxl')
         #! car = [{...}, {...}, ...]

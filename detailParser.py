@@ -302,7 +302,7 @@ def log(filename, text):
 
 if __name__ == "__main__":
     start = time.time()
-    rawData = pd.read_excel("catalog_input.xlsx", header=None)
+    rawData = pd.read_excel("details_input.xlsx", header=None)
     data = [{"detailName": name, "detailNumber": number} for name, number in rawData.values.tolist()]
 
     autodocParser = AutodocParser(data)
