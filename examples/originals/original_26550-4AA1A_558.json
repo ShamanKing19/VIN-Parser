@@ -19,9 +19,9 @@
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "CTB",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T14:00:00",
-                "nextOrderDateString": "14:00 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T07:00:00",
+                "nextOrderDateString": "завтра 07:00 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 7:00, 14:00<br>Вт (2 раза): 7:00, 14:00<br>Ср (2 раза): 7:00, 14:00<br>Чт (2 раза): 7:00, 14:00<br>Пт (2 раза): 7:00, 14:00<br>Сб (2 раза): 7:00, 9:00<br>",
                 "scheduleDays": [
                     "Пн (2 раза): 7:00, 14:00",

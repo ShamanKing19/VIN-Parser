@@ -1,25 +1,37 @@
 import asyncio
+from datetime import datetime
 import json
+import os
 from pprint import pprint
 import random
 import time
+import openpyxl
+from openpyxl import Workbook
 import pandas as pd
 
 import aiohttp
 from fake_useragent import UserAgent
 from tqdm import tqdm
 
-class AutodocParser:
-    def __init__(self, data):
-        self.ouputFilename = "catalog_output.xlsx"
+class DetailParser:
+    def __init__(self):
+        self.today = datetime.now().strftime("%d/%m-%H.%M")
+        self.inputDirectoryPath = "input/"
+        self.outputDirectoryPath = "results/"
+        self.inputFilePath = self.inputDirectoryPath + "details.xlsx"
+        self.outputFilePath = self.outputDirectoryPath + "details.xlsx"
+        self.inputHeaders = ["Наименование номенклатуры", "Каталожный номер"]
+        
+        self.analogOutputHeaders = ["Тип", "Наименование номенклатуры", "Каталожный номер", "Минимальныйы срок доставки", "Производитель", "Цена"]
+        self.originalOutputHeaders = ["Тип", "Наименование номенклатуры", "Каталожный номер", "Срок доставки", "Минимальныйы срок доставки", "Производитель", "Цена", "Поставщик"]
+
+        
         self.timeout = 0
         self.sessionTimeout = aiohttp.ClientTimeout(total=None, sock_connect=self.timeout, sock_read=self.timeout)
         self.connector = aiohttp.TCPConnector(ssl=False, limit=100)
-        self.data = data
+        self.data = self.readDetailsFile()
         self.userAgent = UserAgent().random
-        self.headers = {}
 
-        self.ouputFilename = "details_output.xlsx"
         self.loginAttempts = ["DC1/O1127x9ZL4GU2bhQgg==", "W7F+x+sPZUPsCAcXwYSH5Q=="]        
         
         self.accounts = self.readAccountsFile()
@@ -28,7 +40,7 @@ class AutodocParser:
     async def startParsing(self):
         challengeGuid = await self.getChallengeGuid()
         tokenData = await self.getToken()
-        self.headers = {
+        self.outputHeaders = {
             "authorization": tokenData["token_type"] + " " + tokenData["access_token"],
             "user-agent": self.userAgent
         }
@@ -145,7 +157,7 @@ class AutodocParser:
             "rememberMe": "true"
         }
 
-        session = aiohttp.ClientSession(connector=self.connector, headers=self.headers)
+        session = aiohttp.ClientSession(connector=self.connector, headers=self.outputHeaders)
         response = await session.post(url, data=data)
         responseJson = await response.json()
         returnData = {
@@ -223,14 +235,17 @@ class AutodocParser:
     
 
     def writeToExcel(self, data):
-        headers = ["Тип", "Наименование номенклатуры", "Каталожный номер", "Срок доставки", "Минимальныйы срок доставки", "Производитель", "Цена", "Поставщик"]
-        writer = pd.ExcelWriter(self.ouputFilename, engine='openpyxl')
+        headers = self.analogOutputHeaders
+        for row in data:
+            # if any(row["type"] == ) 
+            if row["type"] == "original":
+                headers = self.originalOutputHeaders
+                break
+            
+        writer = pd.ExcelWriter(self.outputFilePath, engine='openpyxl')
         df = pd.DataFrame(data)
+        
         df.to_excel(writer, encoding="utf-8", index=False, header=headers)
-        #! car = [{...}, {...}, ...]
-        # for item in data:
-        #     if not item: continue
-            # sheetName = f"{car['name']} {car['carModel']}"
         writer.save()
         writer.close()
 
@@ -248,21 +263,40 @@ class AutodocParser:
         return accountsData
 
 
+    def readDetailsFile(self):
+        rawData = pd.read_excel(self.inputFilePath, header=None)
+        data = [{"detailName": name, "detailNumber": number} for name, number in rawData.values.tolist()]
+        del data[0]
+        return data
+
+
     def run(self):
         loop = asyncio.get_event_loop()
         loop.run_until_complete(self.startParsing())
-        
 
-def log(filename, text):
-    file = open(filename, "w", encoding="utf-8")
-    file.write(json.dumps(text, ensure_ascii=False, indent=4))
-    file.close()
+
+    def setup(self):
+        # input dir
+        if not os.path.exists(self.inputDirectoryPath):
+            os.mkdir(self.inputDirectoryPath)
+        
+        # input file
+        if not os.path.exists(self.inputFilePath):
+            wb = Workbook()
+            print(self.outputHeaders)
+            for i, header in enumerate(self.inputHeaders):
+                wb.worksheets[0].cell(1 , i+1, value=header)
+            wb.save(self.inputFilePath)
+
+        # output dir
+        if not os.path.exists(self.outputDirectoryPath):
+            os.mkdir(self.outputDirectoryPath)
+        
 
 
 if __name__ == "__main__":
     start = time.time()
-    rawData = pd.read_excel("details_input.xlsx", header=None)
-    data = [{"detailName": name, "detailNumber": number} for name, number in rawData.values.tolist()]
-
-    autodocParser = AutodocParser(data)
-    autodocParser.run()
+    
+    detailParser = DetailParser()
+    detailParser.setup()
+    detailParser.run()

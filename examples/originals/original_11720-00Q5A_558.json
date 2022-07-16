@@ -19,9 +19,9 @@
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "DEF",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T12:00:00",
-                "nextOrderDateString": "12:00 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T07:40:00",
+                "nextOrderDateString": "завтра 07:40 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Вт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Ср (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Чт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Пт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Сб (4 раза): 7:40, 10:00, 12:00, 13:20<br>",
                 "scheduleDays": [
                     "Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
@@ -53,7 +53,7 @@
                 "isTodayOrderDate": false,
                 "nextOrderDate": "2022-07-18T07:00:00",
                 "nextOrderDateString": "18 июля 07:00 мск",
-                "schedule": "Заказы отправляются поставщику По будням (1 раз): 7:00",
+                "schedule": "Заказы отправляются поставщику <br>По будням (1 раз): 7:00",
                 "scheduleDays": [
                     "По будням (1 раз): 7:00"
                 ],
@@ -76,9 +76,9 @@
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "SHP",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T12:00:00",
-                "nextOrderDateString": "12:00 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T07:40:00",
+                "nextOrderDateString": "завтра 07:40 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Вт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Ср (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Чт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Пт (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00<br>Сб (5 раз): 7:40, 10:00, 12:00, 13:00, 13:20<br>",
                 "scheduleDays": [
                     "Пн (5 раз): 7:40, 10:00, 12:00, 13:40, 16:00",
@@ -107,10 +107,10 @@
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "RTA",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T12:00:00",
-                "nextOrderDateString": "12:00 мск",
-                "schedule": "Заказы отправляются поставщику По будням (5 раз): 8:45, 10:00, 12:00, 13:00, 15:00",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T08:45:00",
+                "nextOrderDateString": "18 июля 08:45 мск",
+                "schedule": "Заказы отправляются поставщику <br>По будням (5 раз): 8:45, 10:00, 12:00, 13:00, 15:00",
                 "scheduleDays": [
                     "По будням (5 раз): 8:45, 10:00, 12:00, 13:00, 15:00"
                 ],
@@ -130,12 +130,12 @@
             "quantity": 6,
             "minimalDeliveryDays": 1,
             "deliveryDays": 4,
-            "updateDate": "14.07.22",
+            "updateDate": "15.07.22",
             "supplier": {
                 "name": "NIK",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T18:00:00",
-                "nextOrderDateString": "18:00 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T08:00:00",
+                "nextOrderDateString": "завтра 08:00 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 8:00, 18:00<br>Вт (2 раза): 8:00, 18:00<br>Ср (2 раза): 8:00, 18:00<br>Чт (2 раза): 8:00, 18:00<br>Пт (2 раза): 8:00, 18:00<br>Сб (1 раз): 8:00<br>Вс (1 раз): 8:00<br>",
                 "scheduleDays": [
                     "Пн (2 раза): 8:00, 18:00",
@@ -158,17 +158,17 @@
         },
         {
             "id": 2588705440,
-            "price": 4667.0,
+            "price": 4668.0,
             "quantity": 1,
             "minimalDeliveryDays": 1,
             "deliveryDays": 4,
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "VKP5",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T12:00:00",
-                "nextOrderDateString": "12:00 мск",
-                "schedule": "Заказы отправляются поставщику По будням (9 раз): 5:00, 6:00, 7:00, 8:00, 9:00, 10:00, 11:00, 12:00, 13:00",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T05:00:00",
+                "nextOrderDateString": "18 июля 05:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>По будням (9 раз): 5:00, 6:00, 7:00, 8:00, 9:00, 10:00, 11:00, 12:00, 13:00",
                 "scheduleDays": [
                     "По будням (9 раз): 5:00, 6:00, 7:00, 8:00, 9:00, 10:00, 11:00, 12:00, 13:00"
                 ],
@@ -223,9 +223,9 @@
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "RLV",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T12:00:00",
-                "nextOrderDateString": "12:00 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T09:00:00",
+                "nextOrderDateString": "завтра 09:00 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Вт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Ср (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Чт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Пт (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45<br>Сб (1 раз): 9:00<br>Вс (1 раз): 9:00<br>",
                 "scheduleDays": [
                     "Пн (5 раз): 9:00, 12:00, 15:00, 16:00, 16:45",
@@ -247,38 +247,6 @@
             "priceType": 2
         },
         {
-            "id": 2598734268,
-            "price": 5010.0,
-            "quantity": 1,
-            "minimalDeliveryDays": 3,
-            "deliveryDays": 6,
-            "updateDate": "15.07.22",
-            "supplier": {
-                "name": "MGVR1",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T16:30:00",
-                "nextOrderDateString": "16:30 мск",
-                "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 7:00, 16:30<br>Вт (2 раза): 7:00, 16:30<br>Ср (2 раза): 7:00, 16:30<br>Чт (2 раза): 7:00, 16:30<br>Пт (2 раза): 7:00, 16:30<br>Сб (2 раза): 7:00, 11:00<br>Вс (1 раз): 16:30<br>",
-                "scheduleDays": [
-                    "Пн (2 раза): 7:00, 16:30",
-                    "Вт (2 раза): 7:00, 16:30",
-                    "Ср (2 раза): 7:00, 16:30",
-                    "Чт (2 раза): 7:00, 16:30",
-                    "Пт (2 раза): 7:00, 16:30",
-                    "Сб (2 раза): 7:00, 11:00",
-                    "Вс (1 раз): 16:30"
-                ],
-                "isAutodocMoscow": false,
-                "isMagazine": false,
-                "description": "Оптовый склад"
-            },
-            "orderCompletePercent": 80,
-            "directionToManufacturerId": 151069,
-            "minimalQuantity": 1,
-            "idPartner": 1645,
-            "priceType": 2
-        },
-        {
             "id": 2579427350,
             "price": 5304.0,
             "quantity": 10,
@@ -287,9 +255,9 @@
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "VSR2",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T14:00:00",
-                "nextOrderDateString": "14:00 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T09:00:00",
+                "nextOrderDateString": "завтра 09:00 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Вт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Ср (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Чт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Пт (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Сб (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00<br>Вс (2 раза): 9:00, 14:00<br>",
                 "scheduleDays": [
                     "Пн (5 раз): 9:00, 11:00, 14:00, 16:00, 20:00",
@@ -353,7 +321,7 @@
                 "isTodayOrderDate": false,
                 "nextOrderDate": "2022-07-18T07:30:00",
                 "nextOrderDateString": "18 июля 07:30 мск",
-                "schedule": "Заказы отправляются поставщику По будням (1 раз): 7:30",
+                "schedule": "Заказы отправляются поставщику <br>По будням (1 раз): 7:30",
                 "scheduleDays": [
                     "По будням (1 раз): 7:30"
                 ],
@@ -379,7 +347,7 @@
                 "isTodayOrderDate": false,
                 "nextOrderDate": "2022-07-18T08:50:00",
                 "nextOrderDateString": "18 июля 08:50 мск",
-                "schedule": "Заказы отправляются поставщику По будням (1 раз): 8:50",
+                "schedule": "Заказы отправляются поставщику <br>По будням (1 раз): 8:50",
                 "scheduleDays": [
                     "По будням (1 раз): 8:50"
                 ],
@@ -395,7 +363,7 @@
         },
         {
             "id": 2600293121,
-            "price": 7500.0,
+            "price": 7750.0,
             "quantity": 1,
             "minimalDeliveryDays": 1,
             "deliveryDays": 4,
@@ -405,7 +373,7 @@
                 "isTodayOrderDate": false,
                 "nextOrderDate": "2022-07-18T08:00:00",
                 "nextOrderDateString": "18 июля 08:00 мск",
-                "schedule": "Заказы отправляются поставщику По будням (1 раз): 8:00",
+                "schedule": "Заказы отправляются поставщику <br>По будням (1 раз): 8:00",
                 "scheduleDays": [
                     "По будням (1 раз): 8:00"
                 ],
@@ -425,12 +393,12 @@
             "quantity": 5,
             "minimalDeliveryDays": 4,
             "deliveryDays": 7,
-            "updateDate": "14.07.22",
+            "updateDate": "15.07.22",
             "supplier": {
                 "name": "GLVD",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T17:00:00",
-                "nextOrderDateString": "17:00 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-17T16:00:00",
+                "nextOrderDateString": "17 июля 16:00 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (2 раза): 9:30, 17:00<br>Вт (2 раза): 9:30, 17:00<br>Ср (2 раза): 9:30, 17:00<br>Чт (2 раза): 9:30, 17:00<br>Пт (2 раза): 9:30, 17:00<br>Вс (1 раз): 16:00<br>",
                 "scheduleDays": [
                     "Пн (2 раза): 9:30, 17:00",
@@ -459,9 +427,9 @@
             "updateDate": "15.07.22",
             "supplier": {
                 "name": "AKAD",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T12:30:00",
-                "nextOrderDateString": "12:30 мск",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-16T09:30:00",
+                "nextOrderDateString": "завтра 09:30 мск",
                 "schedule": "Заказы отправляются поставщику <br>Пн (4 раза): 9:30, 12:30, 15:30, 17:15<br>Вт (4 раза): 9:30, 12:30, 15:30, 17:15<br>Ср (4 раза): 9:30, 12:30, 15:30, 17:15<br>Чт (4 раза): 9:30, 12:30, 15:30, 17:15<br>Пт (4 раза): 9:30, 12:30, 15:30, 17:15<br>Сб (3 раза): 9:30, 12:00, 14:30<br>",
                 "scheduleDays": [
                     "Пн (4 раза): 9:30, 12:30, 15:30, 17:15",
@@ -479,63 +447,6 @@
             "directionToManufacturerId": 454392,
             "minimalQuantity": 1,
             "idPartner": 5540,
-            "priceType": 2
-        },
-        {
-            "id": 2380615555,
-            "price": 25148.0,
-            "quantity": 5,
-            "minimalDeliveryDays": 0,
-            "deliveryDays": 3,
-            "updateDate": "15.07.22",
-            "supplier": {
-                "name": "Дилер",
-                "isTodayOrderDate": true,
-                "nextOrderDate": "2022-07-15T12:00:00",
-                "nextOrderDateString": "12:00 мск",
-                "schedule": "Заказы отправляются поставщику <br>Пн (4 раза): 7:30, 10:00, 12:00, 17:00<br>Вт (4 раза): 7:30, 10:00, 12:00, 17:00<br>Ср (4 раза): 7:30, 10:00, 12:00, 17:00<br>Чт (4 раза): 7:30, 10:00, 12:00, 17:00<br>Пт (4 раза): 7:30, 10:00, 12:00, 17:00<br>Сб (2 раза): 7:30, 10:00<br>",
-                "scheduleDays": [
-                    "Пн (4 раза): 7:30, 10:00, 12:00, 17:00",
-                    "Вт (4 раза): 7:30, 10:00, 12:00, 17:00",
-                    "Ср (4 раза): 7:30, 10:00, 12:00, 17:00",
-                    "Чт (4 раза): 7:30, 10:00, 12:00, 17:00",
-                    "Пт (4 раза): 7:30, 10:00, 12:00, 17:00",
-                    "Сб (2 раза): 7:30, 10:00"
-                ],
-                "isAutodocMoscow": false,
-                "isMagazine": false,
-                "description": "Склад дилера"
-            },
-            "orderCompletePercent": 93,
-            "directionToManufacturerId": 89448,
-            "minimalQuantity": 1,
-            "idPartner": 1240,
-            "priceType": 2
-        },
-        {
-            "id": 2452701138,
-            "price": 28669.0,
-            "quantity": 5,
-            "minimalDeliveryDays": 1,
-            "deliveryDays": 4,
-            "updateDate": "15.07.22",
-            "supplier": {
-                "name": "OPT",
-                "isTodayOrderDate": false,
-                "nextOrderDate": "2022-07-18T06:30:00",
-                "nextOrderDateString": "18 июля 06:30 мск",
-                "schedule": "Заказы отправляются поставщику По будням (1 раз): 6:30",
-                "scheduleDays": [
-                    "По будням (1 раз): 6:30"
-                ],
-                "isAutodocMoscow": false,
-                "isMagazine": false,
-                "description": "Оптовый склад"
-            },
-            "orderCompletePercent": 91,
-            "directionToManufacturerId": 77988,
-            "minimalQuantity": 1,
-            "idPartner": 1155,
             "priceType": 2
         }
     ],
@@ -565,9 +476,9 @@
                     "updateDate": "15.07.22",
                     "supplier": {
                         "name": "Дистрибьютор",
-                        "isTodayOrderDate": true,
-                        "nextOrderDate": "2022-07-15T11:59:00",
-                        "nextOrderDateString": "11:59 мск",
+                        "isTodayOrderDate": false,
+                        "nextOrderDate": "2022-07-16T08:59:00",
+                        "nextOrderDateString": "завтра 08:59 мск",
                         "schedule": "Заказы отправляются поставщику <br>Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Сб (4 раза): 8:59, 11:59, 13:59, 15:59<br>",
                         "scheduleDays": [
                             "Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",
@@ -623,15 +534,15 @@
                 {
                     "id": 2582704082,
                     "price": 3515.0,
-                    "quantity": 7,
+                    "quantity": 6,
                     "minimalDeliveryDays": 0,
                     "deliveryDays": 3,
                     "updateDate": "15.07.22",
                     "supplier": {
                         "name": "Дистрибьютор",
-                        "isTodayOrderDate": true,
-                        "nextOrderDate": "2022-07-15T11:59:00",
-                        "nextOrderDateString": "11:59 мск",
+                        "isTodayOrderDate": false,
+                        "nextOrderDate": "2022-07-16T08:59:00",
+                        "nextOrderDateString": "завтра 08:59 мск",
                         "schedule": "Заказы отправляются поставщику <br>Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Вт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Ср (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Чт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Пт (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59<br>Сб (4 раза): 8:59, 11:59, 13:59, 15:59<br>",
                         "scheduleDays": [
                             "Пн (6 раз): 8:59, 11:59, 13:59, 15:59, 17:59, 19:59",

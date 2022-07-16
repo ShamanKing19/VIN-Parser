@@ -180,7 +180,7 @@
                 "name": "CONTITECH",
                 "popularityIndex": 0
             },
-            "minimalPrice": 1421.0,
+            "minimalPrice": 1423.0,
             "minimalDeliveryDays": 3,
             "inventoryItems": [],
             "analogs": [],
@@ -236,34 +236,6 @@
             "isAutodocMoscow": false,
             "crossLevel": 1,
             "crossType": 4,
-            "partNumber": "6PK1822K",
-            "displayPartNumber": "6PK1822K",
-            "name": "Ремень поликлиновой",
-            "manufacturer": {
-                "id": 42,
-                "name": "DAYCO",
-                "popularityIndex": 0
-            },
-            "minimalPrice": 1972.0,
-            "minimalDeliveryDays": 4,
-            "inventoryItems": [],
-            "analogs": [],
-            "fotoUrls": [],
-            "fotoType": "None",
-            "fotoIds": [],
-            "isPhotoAvaiable": false,
-            "commentCount": 0,
-            "isCompatibility": 0,
-            "mark": {
-                "avgMark": 0.0,
-                "cntMark": 0
-            }
-        },
-        {
-            "isOfficial": false,
-            "isAutodocMoscow": false,
-            "crossLevel": 1,
-            "crossType": 4,
             "partNumber": "6PK1823XS",
             "displayPartNumber": "6PK1823XS",
             "name": "Ремень поликлиновой",
@@ -289,6 +261,34 @@
             "mark": {
                 "avgMark": 4.285714,
                 "cntMark": 7
+            }
+        },
+        {
+            "isOfficial": false,
+            "isAutodocMoscow": false,
+            "crossLevel": 1,
+            "crossType": 4,
+            "partNumber": "6PK1822K",
+            "displayPartNumber": "6PK1822K",
+            "name": "Ремень поликлиновой",
+            "manufacturer": {
+                "id": 42,
+                "name": "DAYCO",
+                "popularityIndex": 0
+            },
+            "minimalPrice": 3225.0,
+            "minimalDeliveryDays": 7,
+            "inventoryItems": [],
+            "analogs": [],
+            "fotoUrls": [],
+            "fotoType": "None",
+            "fotoIds": [],
+            "isPhotoAvaiable": false,
+            "commentCount": 0,
+            "isCompatibility": 0,
+            "mark": {
+                "avgMark": 0.0,
+                "cntMark": 0
             }
         },
         {

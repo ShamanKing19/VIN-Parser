@@ -1,10 +1,14 @@
 import asyncio
+from datetime import datetime
 import itertools
 import json
+import os
 from pprint import pprint
 import random
 import time
 import aiohttp
+import openpyxl
+from openpyxl import Workbook
 import pandas as pd
 from tqdm import tqdm
 # pip install xlsxwriter
@@ -15,15 +19,19 @@ from tqdm import tqdm
 
 
 class AutodocParser:
-    def __init__(self, data):
-        self.timeout = 5
-        self.sessionTimeout = aiohttp.ClientTimeout(
-            total=None, sock_connect=self.timeout, sock_read=self.timeout)
-        self.connector = aiohttp.TCPConnector(ssl=False, limit=10000)
-        self.session = aiohttp.ClientSession(
-            connector=self.connector, timeout=self.sessionTimeout)
-        self.data = data
+    def __init__(self):
+        self.today = datetime.now().strftime("%d/%m-%H.%M")
+        self.inputDirectoryPath = "input/"
+        self.outputDirectoryPath = "results/"
+        self.inputFilePath = self.inputDirectoryPath + "vins.xlsx"
+        self.outputFilePath = self.outputDirectoryPath + "vin.xlsx"
         self.accounts = self.readAccountsFile()
+        self.data = []
+        
+        self.timeout = 0
+        self.sessionTimeout = aiohttp.ClientTimeout(total=None, sock_connect=self.timeout, sock_read=self.timeout)
+        self.connector = aiohttp.TCPConnector(ssl=False, limit=100)
+        self.session = aiohttp.ClientSession(connector=self.connector, timeout=self.sessionTimeout)
         self.account = random.choice(self.accounts)
 
         self.tokenPostData = {
@@ -31,10 +39,11 @@ class AutodocParser:
             "password": self.account["password"],
             "grant_type": "password"
         }
-        self.ouputFilename = "vin_output.xlsx"
-
-
+        
+        
     def run(self):
+        self.data = self.readInputFile()
+        if len(self.data) == 1: return
         loop = asyncio.get_event_loop()
         loop.run_until_complete(self.startParsing())
 
@@ -54,7 +63,6 @@ class AutodocParser:
             primaryData.append(self.collectPrimaryData(response))
         carsPrimaryInfo = await asyncio.gather(*primaryData)
 
-
         # * Парсинг по VIN по машине
         requestsList = []
         for carData in carsPrimaryInfo:
@@ -62,6 +70,8 @@ class AutodocParser:
         carsInfo = await asyncio.gather(*requestsList)
         self.session.close()
         self.writeToExcel(carsInfo)
+
+        await self.session.close()
 
 
     async def parseVINs(self, carInfo):
@@ -140,7 +150,7 @@ class AutodocParser:
         try:
             primaryData = responseData["commonAttributes"]
         except Exception as error:
-            print(error)
+            # print(error)
             return
 
         for attribute in primaryData:
@@ -171,24 +181,47 @@ class AutodocParser:
 
 
     def writeToExcel(self, carsData):
-        writer = pd.ExcelWriter(self.ouputFilename, engine='openpyxl')
+        headers = ["Категория", "Название запчасти", "Каталожный номер"]
+        if not self.data: return
+        writer = pd.ExcelWriter(self.outputFilePath, engine='openpyxl')
         #! car = [{...}, {...}, ...]
         for car in carsData:
             if not car: continue
             items = car["items"]
             sheetName = f"{car['name']} {car['carModel']}"
             df = pd.DataFrame(items)
-            df.to_excel(writer, sheet_name=sheetName, encoding="utf-8", index=False)
+            df.to_excel(writer, sheet_name=sheetName, encoding="utf-8", header=headers, index=False)
             writer.save()
         writer.close()
 
 
+    def readInputFile(self):
+        vins = pd.read_excel(self.inputFilePath, header=None)
+        data = [vin[0] for vin in vins.values.tolist()]
+        return data
+    
+
+    def setup(self):
+        # input dir
+        if not os.path.exists(self.inputDirectoryPath):
+            os.mkdir(self.inputDirectoryPath)
+        
+        # input file
+        if not os.path.exists(self.inputFilePath):
+            wb = Workbook()
+            wb.worksheets[0].cell(1 , 1, value="VINS")
+            wb.save(self.inputFilePath)
+
+        # output dir
+        if not os.path.exists(self.outputDirectoryPath):
+            os.mkdir(self.outputDirectoryPath)
+
+
 if __name__ == "__main__":
     start = time.time()
-    vins = pd.read_excel("vin_input.xlsx", header=None)
-    data = [vin[0] for vin in vins.values.tolist()]
-
-    autodocParser = AutodocParser(data)
+    
+    autodocParser = AutodocParser()
+    autodocParser.setup()
     autodocParser.run()
     
     print(time.time() - start)

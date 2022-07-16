@@ -6,7 +6,34 @@
     },
     "minimalPrice": 0.0,
     "minimalDeliveryDays": 0,
-    "inventoryItems": [],
+    "inventoryItems": [
+        {
+            "id": 2601634987,
+            "price": 17177.0,
+            "quantity": 1,
+            "minimalDeliveryDays": 0,
+            "deliveryDays": 3,
+            "updateDate": "15.07.22",
+            "supplier": {
+                "name": "IMP",
+                "isTodayOrderDate": false,
+                "nextOrderDate": "2022-07-18T09:00:00",
+                "nextOrderDateString": "18 июля 09:00 мск",
+                "schedule": "Заказы отправляются поставщику <br>По будням (1 раз): 9:00",
+                "scheduleDays": [
+                    "По будням (1 раз): 9:00"
+                ],
+                "isAutodocMoscow": false,
+                "isMagazine": false,
+                "description": "Оптовый склад"
+            },
+            "orderCompletePercent": 79,
+            "directionToManufacturerId": 317311,
+            "minimalQuantity": 1,
+            "idPartner": 3589,
+            "priceType": 2
+        }
+    ],
     "analogs": [],
     "fotoUrls": [],
     "fotoType": "None",
