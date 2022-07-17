@@ -37,7 +37,6 @@ class AutodocParser:
             "grant_type": "password"
         }
         self.data = self.readInputFile()
-        if len(self.data) == 1: return
         loop = asyncio.get_event_loop()
         loop.run_until_complete(self.startParsing())
 
@@ -89,12 +88,12 @@ class AutodocParser:
         allCategories = categories + subcats
 
         for partCategory in tqdm(allCategories):
-            sparePartInfoUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/0/categories/{partCategory['categoryId']}/units?ssd={partCategory['ssd']}"
+            sparePartInfoUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/{carID}/categories/{partCategory['categoryId']}/units?ssd={partCategory['ssd']}"
             sparePartInfoResponse = await self.session.get(sparePartInfoUrl)
             sparePartInfoResponseJson = await sparePartInfoResponse.json()
 
             for sparePartsInfo in sparePartInfoResponseJson.get("items", []):
-                sparePartDetailInfoUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/0/units/{sparePartsInfo['unitId']}/spareparts?ssd={sparePartsInfo['ssd']}"
+                sparePartDetailInfoUrl = f"https://catalogoriginal.autodoc.ru/api/catalogs/original/brands/{carInfo['Catalog']}/cars/{carID}/units/{sparePartsInfo['unitId']}/spareparts?ssd={sparePartsInfo['ssd']}"
                 data = {
                     "Ssd": sparePartsInfo['ssd']
                 }
@@ -143,12 +142,11 @@ class AutodocParser:
             "VIN": vin
         }
         responseData = await response.json()
-
-        try:
-            primaryData = responseData["commonAttributes"]
-        except Exception as error:
-            # print(error)
-            return
+        
+        primaryData = responseData.get("commonAttributes", [])
+        modifications = responseData.get("specificAttributes", [])
+        if modifications:
+            primaryData += modifications[0].get("attributes", [])
 
         for attribute in primaryData:
             carPrimaryInfo[attribute["key"]] = attribute["value"]
@@ -195,6 +193,7 @@ class AutodocParser:
     def readInputFile(self):
         vins = pd.read_excel(self.inputFilePath, header=None)
         data = [vin[0] for vin in vins.values.tolist()]
+        del data[0]
         return data
     
 
@@ -227,11 +226,27 @@ class AutodocParser:
             isFirstLaunch = True
         return isFirstLaunch
 
+    
+def log(filename, text):
+    file = open(filename, "a", encoding="utf-8")
+    file.write(text)
+    file.close()
+
+
+# def logJson(filename, text):
+#     file = open(filename, "w", encoding="utf-8")
+#     file.write(json.dumps(text, ensure_ascii=False, indent=4))
+#     file.close()
+
 
 if __name__ == "__main__":
     
-    autodocParser = AutodocParser()
-    if not autodocParser.setup():
-        autodocParser.run()
-    else:
-        print("Рабочие файлы и папки созданы, заполните их!")
+    try:
+        autodocParser = AutodocParser()
+        if not autodocParser.setup():
+            autodocParser.run()
+        else:
+            print("Рабочие файлы и папки созданы, заполните их!")
+    except Exception as e:
+        log("errorLogs.txt", str(e)+"\n")
+        
