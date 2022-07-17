@@ -1,10 +1,8 @@
 import asyncio
 from datetime import datetime
-import json
 import os
 from pprint import pprint
 import random
-import time
 import openpyxl
 from openpyxl import Workbook
 import pandas as pd
@@ -16,25 +14,26 @@ from tqdm import tqdm
 class DetailParser:
     def __init__(self):
         self.today = datetime.now().strftime("%d/%m-%H.%M")
+        self.now = datetime.now().strftime("%H.%M")
         self.inputDirectoryPath = "input/"
         self.outputDirectoryPath = "results/"
         self.inputFilePath = self.inputDirectoryPath + "details.xlsx"
-        self.outputFilePath = self.outputDirectoryPath + "details.xlsx"
+        self.outputFilePath = self.outputDirectoryPath + f"details_{self.now}.xlsx"
+        self.accountsFilePath = "accounts.xlsx"
+        self.accountsHeaders = ["login", "password"]
         self.inputHeaders = ["Наименование номенклатуры", "Каталожный номер"]
         
-        self.analogOutputHeaders = ["Тип", "Наименование номенклатуры", "Каталожный номер", "Минимальныйы срок доставки", "Производитель", "Цена"]
-        self.originalOutputHeaders = ["Тип", "Наименование номенклатуры", "Каталожный номер", "Срок доставки", "Минимальныйы срок доставки", "Производитель", "Цена", "Поставщик"]
+        self.analogOutputHeaders = ["Тип", "Наименование номенклатуры", "Каталожный номер", "Минимальный срок доставки", "Производитель", "Цена"]
+        self.originalOutputHeaders = ["Тип", "Наименование номенклатуры", "Каталожный номер", "Срок доставки", "Минимальный срок доставки", "Производитель", "Количество", "Цена", "Поставщик"]
 
         
         self.timeout = 0
         self.sessionTimeout = aiohttp.ClientTimeout(total=None, sock_connect=self.timeout, sock_read=self.timeout)
         self.connector = aiohttp.TCPConnector(ssl=False, limit=100)
-        self.data = self.readDetailsFile()
         self.userAgent = UserAgent().random
 
         self.loginAttempts = ["DC1/O1127x9ZL4GU2bhQgg==", "W7F+x+sPZUPsCAcXwYSH5Q=="]        
         
-        self.accounts = self.readAccountsFile()
 
 
     async def startParsing(self):
@@ -88,6 +87,7 @@ class DetailParser:
                     "deliveryDays": item["deliveryDays"],
                     "minimumDeliveryDays": item["minimalDeliveryDays"],
                     "manufacturerName": manufacturerName,
+                    "quantity": item["quantity"],
                     "price": item["price"],
                     "supplier": item["supplier"]["name"] # Поставщик
                 }
@@ -97,13 +97,11 @@ class DetailParser:
             for item in analogDetails["analogs"]:
                 outputDetailData = {
                     "type": "analog",
-                    "detailName": item["name"],
+                    "detailName": detailName,
                     "detailNumber": item["partNumber"], # можно использовать displayPartNumber
-                    # "deliveryDays": item["deliveryDays"],
                     "minimumDeliveryDays": item["minimalDeliveryDays"],
                     "manufacturerName": item["manufacturer"]["name"],
                     "price": item["minimalPrice"],
-                    # "supplier": item["inventoryItems"][0]["supplier"]["name"] # Поставщик
                 }
                 outputItems.append(outputDetailData)
 
@@ -200,9 +198,13 @@ class DetailParser:
 
         #! Если забанят аккаунт, берём другой рандомный
         while responseJson.get("error", False):
-            print("Аккаунт забанен, пробую ещё...")
+            if responseJson["error"] == "access_denied":
+                print(f"Аккаунт {self.account['login']} недействителен")
+            print(f"Аккаунт {self.account['login']} забанен, пробую ещё...")
+            
             responseJson = await self.makeTokenRequest()
         
+        print(f"Зашёл через аккаунт {self.account['login']}")
         accessToken = responseJson["access_token"]
         refreshToken = responseJson["refresh_token"]
         expiresIn = responseJson["expires_in"]
@@ -251,7 +253,7 @@ class DetailParser:
 
     
     def readAccountsFile(self):
-        rawData = pd.read_excel("accounts.xlsx", index_col=False)
+        rawData = pd.read_excel(self.accountsFilePath, index_col=False)
         accounts = rawData.to_numpy()
         
         accountsData = []
@@ -271,32 +273,51 @@ class DetailParser:
 
 
     def run(self):
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.startParsing())
-
+        self.accounts = self.readAccountsFile()
+        self.data = self.readDetailsFile()
+        if self.accounts:
+            loop = asyncio.get_event_loop()
+            loop.run_until_complete(self.startParsing())
+        else:
+            print("Введите логин и пароль от аккаунта в файл accounts.xlsx")
 
     def setup(self):
+        isFirstLaunch = False
         # input dir
         if not os.path.exists(self.inputDirectoryPath):
             os.mkdir(self.inputDirectoryPath)
+            isFirstLaunch = True
         
         # input file
         if not os.path.exists(self.inputFilePath):
             wb = Workbook()
-            print(self.outputHeaders)
             for i, header in enumerate(self.inputHeaders):
                 wb.worksheets[0].cell(1 , i+1, value=header)
             wb.save(self.inputFilePath)
+            isFirstLaunch = True
+
 
         # output dir
         if not os.path.exists(self.outputDirectoryPath):
             os.mkdir(self.outputDirectoryPath)
+            isFirstLaunch = True
+
+        # accounts file
+        if not os.path.exists(self.accountsFilePath):
+            wb = Workbook()
+            for i, header in enumerate(self.accountsHeaders):
+                wb.worksheets[0].cell(1 , i+1, value=header)
+            wb.save(self.accountsFilePath)
+            isFirstLaunch = True
+
+        return isFirstLaunch
+
         
 
 
-if __name__ == "__main__":
-    start = time.time()
-    
+if __name__ == "__main__":    
     detailParser = DetailParser()
-    detailParser.setup()
-    detailParser.run()
+    if not detailParser.setup():
+        detailParser.run()
+    else:
+        print("Рабочие файлы и папки созданы, заполните их!")
